@@ -21,7 +21,8 @@ import java.util.Map;
  * @author zzc
  * @version 0.1
  */
-@RestController("api")
+@RestController
+@RequestMapping("api")
 public class EsSearchController {
     private Logger log = LoggerFactory.getLogger(getClass());
 
@@ -57,7 +58,6 @@ public class EsSearchController {
      */
     @RequestMapping("mutil_query_hit")
     public List<Map<String,Object>> mutilQueryHit(@RequestParam String keyword, @RequestParam(required = false) String indices, @RequestParam(required = false) String fields){
-
         String[] fieldNames = {};
         if(StringUtils.isEmpty(indices)){
             fieldNames = this.DEFAULT_FIELDS;

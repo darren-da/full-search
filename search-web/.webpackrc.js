@@ -8,10 +8,9 @@ export default {
     assets: resolve(__dirname, 'src/assets'),
   },
   "proxy": {
-    "/api": {
-      "target": "http://localhost:8080/api",
-      "changeOrigin": true,
-      "pathRewrite": { "^/api" : "" }
+    "/**/api/**": {
+      "target": "http://localhost:8080/",
+      "changeOrigin": true
     }
   }
 };

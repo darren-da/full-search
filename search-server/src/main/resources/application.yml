@@ -1,0 +1,32 @@
+server:
+    port: 8081
+
+spring:
+    application:
+        name: search
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 172.25.27.31:8848
+    data:
+      elasticsearch:
+        cluster-name: my-application
+        cluster-nodes: localhost:9300
+
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+tzprj:
+    devLogin: enabled
+    security: enabled
+    jwt:
+        secret: tzkj-secret-token-to-change-in-production
+        tokenValidityInSeconds: 2592000  # Token is valid 24 hours
+        tokenValidityInSecondsForRememberMe:  2592000    #2592000
+
+jasypt:
+  encryptor:
+    password: TZKJPSW

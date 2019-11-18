@@ -13,7 +13,8 @@ export default {
     effects: {
         *search({ payload }, { call, put }) {
             const response = yield call(api.get, 'api/mutil_query_hit', payload);
-            yield put({ type: 'saveState', payload: { results:response.list}});    
+            console.log("response",response)
+            yield put({ type: 'saveState', payload: { results:response}});    
         }
     },
 

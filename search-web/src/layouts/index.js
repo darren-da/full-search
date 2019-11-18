@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { connect } from 'dva';
 import { Layout} from 'antd';
 import SiderMenu from "../components/SiderMenu/SiderMenu";
 import { getMenuData } from '../common/menu';
@@ -35,4 +36,8 @@ class BasicLayout extends Component {
   }
 }
 
-export default BasicLayout;
+export default connect(state => {
+  return {
+    appModel:state.appModel
+  }
+})(BasicLayout);

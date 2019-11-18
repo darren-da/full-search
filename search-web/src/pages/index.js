@@ -18,6 +18,7 @@ class IndexPage extends Component{
   }
 
   render() {
+    console.log("results",this.props.searcher.results)
     return(
       <div className={styles.normal}>
         <div>
