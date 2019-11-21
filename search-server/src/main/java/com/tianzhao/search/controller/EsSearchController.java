@@ -1,12 +1,13 @@
 package com.tianzhao.search.controller;
 
-
 import com.tianzhao.search.common.DocumentTypeEnum;
 import com.tianzhao.search.document.ProductDocument;
 import com.tianzhao.search.page.Page;
 import com.tianzhao.search.service.BaseSearchService;
 import com.tianzhao.search.service.EsSearchService;
 import com.tianzhao.search.service.impl.BaseSearchServiceImpl;
+import com.tzkj.commons.web.ApiResult;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
@@ -57,7 +58,7 @@ public class EsSearchController {
      * @return
      */
     @RequestMapping("mutil_query_hit")
-    public List<Map<String,Object>> mutilQueryHit(@RequestParam String keyword, @RequestParam(required = false) String indices, @RequestParam(required = false) String fields){
+    public ApiResult mutilQueryHit(@RequestParam String keyword, @RequestParam(required = false) String indices, @RequestParam(required = false) String fields){
         String[] fieldNames = {};
         if(StringUtils.isEmpty(indices)){
             fieldNames = this.DEFAULT_FIELDS;
@@ -73,7 +74,7 @@ public class EsSearchController {
             if(indices.contains(",")) indexNames = indices.split(",");
             else indexNames[0] = indices;
         }
-        return searchService.mutilQueryHit(keyword,indexNames,fieldNames);
+        return ApiResult.success("result", searchService.mutilQueryHit(keyword,indexNames,fieldNames));
     }
 
     /**
@@ -104,6 +105,7 @@ public class EsSearchController {
             if(indices.contains(",")) indexNames = indices.split(",");
             else indexNames[0] = indices;
         }
+        
         return searchService.mutilQueryHitPage(pageNo,pageSize,keyword,indexNames,fieldNames);
     }
 

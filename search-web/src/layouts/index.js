@@ -1,10 +1,6 @@
 import { Component } from 'react';
 import { connect } from 'dva';
 import { Layout} from 'antd';
-import SiderMenu from "../components/SiderMenu/SiderMenu";
-import { getMenuData } from '../common/menu';
-import logo from '../assets/logo.svg';
-import GlobalHeader from "../components/GlobalHeader";
 
 const { Content, Header } = Layout;
 
