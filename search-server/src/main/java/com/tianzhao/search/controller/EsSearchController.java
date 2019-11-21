@@ -74,7 +74,7 @@ public class EsSearchController {
             if(indices.contains(",")) indexNames = indices.split(",");
             else indexNames[0] = indices;
         }
-        return ApiResult.success("result", searchService.mutilQueryHit(keyword,indexNames,fieldNames));
+        return ApiResult.success("list", searchService.mutilQueryHit(keyword,indexNames,fieldNames));
     }
 
     /**

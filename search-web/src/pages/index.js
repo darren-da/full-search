@@ -47,13 +47,10 @@ class IndexPage extends Component{
                   }}
                   renderItem={item => (
                     <List.Item>
-                      <List.Item.Meta
-                        title={
-                          <a href="https://ant.design">
-                            {item.highlight.title + "" + item.highlight.description}
-                          </a>
-                        }
-                      />
+                      <div>
+                      <a href="https://ant.design" dangerouslySetInnerHTML={{__html: item.highlight.title}}></a>
+                      <p dangerouslySetInnerHTML={{__html: item.highlight.description}}></p>
+                      </div>
                     </List.Item>
                   )}
                 />

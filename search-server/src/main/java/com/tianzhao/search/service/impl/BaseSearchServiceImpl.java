@@ -171,7 +171,7 @@ public class BaseSearchServiceImpl implements BaseSearchService {
     private HighlightBuilder createHighlightBuilder(String... fieldNames){
         // 设置高亮,使用默认的highlighter高亮器
         HighlightBuilder highlightBuilder = new HighlightBuilder()
-                .preTags("<span style={{color:'red'}}>")
+                .preTags("<span style=\"color: red \">")
                 .postTags("</span>");
 
         // 设置高亮字段

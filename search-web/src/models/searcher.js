@@ -14,7 +14,7 @@ export default {
         *search({ payload }, { call, put }) {
             const response = yield call(api.get, 'api/mutil_query_hit', payload);
             console.log("response",response)
-            yield put({ type: 'saveState', payload: { results:response}});    
+            yield put({ type: 'saveState', payload: { results:response.data.list}});
         }
     },
 
