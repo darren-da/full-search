@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "createTime": {
+      "type": "long"
+    },
+    "businessId":{
+      "type": "text"
+    },
+    "type":{
+      "type": "text"
+    },
+    "title": {
+      "type": "text",
+      "analyzer": "ik_max_word",
+      "search_analyzer": "ik_max_word"
+    },
+    "description": {
+      "type": "text",
+      "analyzer": "ik_smart",
+      "search_analyzer": "ik_smart"
+    },
+    "resource": {
+      "type": "text",
+      "analyzer": "ik_smart",
+      "search_analyzer": "ik_smart"
+    }
+  }
+}

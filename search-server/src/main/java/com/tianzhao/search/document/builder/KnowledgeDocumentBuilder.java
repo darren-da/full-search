@@ -45,6 +45,11 @@ public class KnowledgeDocumentBuilder {
         return this;
     }
 
+    public KnowledgeDocumentBuilder addResource(String resource) {
+        knowledgeDocument.setResource(resource);
+        return this;
+    }
+
     public KnowledgeDocument builder() {
         return knowledgeDocument;
     }

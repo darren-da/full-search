@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -30,6 +31,13 @@ public class MediaFileServiceImpl extends BaseSearchServiceImpl implements IServ
         elasticsearchTemplate.putMapping(MediaFileDocument.class);
         if(knowledgeDocuments.length > 0){
             log.info("【保存索引】：{}", JSON.toJSONString(mediaFileDocumentRepository.saveAll(Arrays.asList(knowledgeDocuments))));
+        }
+    }
+
+    public void save(List<MediaFileDocument> list) {
+        elasticsearchTemplate.putMapping(MediaFileDocument.class);
+        if( !CollectionUtils.isEmpty(list) ){
+            log.info("【保存索引】：{}", JSON.toJSONString(mediaFileDocumentRepository.saveAll(list)));
         }
     }
 

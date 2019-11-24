@@ -11,7 +11,7 @@ import java.util.Date;
  * Created by zzc on 2019/11/16.
  */
 @Document(indexName = "media_file")
-@Mapping(mappingPath = "index.json")
+@Mapping(mappingPath = "mediafiles.json")
 public class MediaFileDocument {
     @Id
     private String id;
@@ -35,6 +35,10 @@ public class MediaFileDocument {
      * 创建时间
      */
     private Date createTime;
+    /**
+     * 数据来源
+     */
+    private String resource;
 
     public String getId() {
         return id;
@@ -82,5 +86,13 @@ public class MediaFileDocument {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getResource() {
+        return resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
     }
 }

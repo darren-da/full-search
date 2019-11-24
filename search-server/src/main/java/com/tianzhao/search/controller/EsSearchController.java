@@ -6,6 +6,7 @@ import com.tianzhao.search.page.Page;
 import com.tianzhao.search.service.BaseSearchService;
 import com.tianzhao.search.service.EsSearchService;
 import com.tianzhao.search.service.impl.BaseSearchServiceImpl;
+import com.tzkj.commons.security.SecurityUtils;
 import com.tzkj.commons.web.ApiResult;
 
 import org.slf4j.Logger;

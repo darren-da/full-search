@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -30,6 +31,13 @@ public class KnowledgeServiceImpl extends BaseSearchServiceImpl implements IServ
         elasticsearchTemplate.putMapping(KnowledgeDocument.class);
         if(knowledgeDocuments.length > 0){
             log.info("【保存索引】：{}", JSON.toJSONString(knowledgeDocumentRepository.saveAll(Arrays.asList(knowledgeDocuments))));
+        }
+    }
+
+    public void save(List<KnowledgeDocument> list) {
+        elasticsearchTemplate.putMapping(KnowledgeDocument.class);
+        if( !CollectionUtils.isEmpty(list) ){
+            log.info("【保存索引】：{}", JSON.toJSONString(knowledgeDocumentRepository.saveAll(list)));
         }
     }
 

@@ -45,6 +45,11 @@ public class MediaFileDocumentBuilder {
         return this;
     }
 
+    public MediaFileDocumentBuilder addResource(String resource) {
+        mediaFileDocument.setResource(resource);
+        return this;
+    }
+
     public MediaFileDocument builder() {
         return mediaFileDocument;
     }

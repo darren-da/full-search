@@ -9,10 +9,35 @@ spring:
             discovery:
                 server-addr: 172.25.27.31:8848
     data:
-      elasticsearch:
-        cluster-name: my-application
-        cluster-nodes: 172.26.123.11:9300
-
+        elasticsearch:
+            cluster-name: my-application
+            cluster-nodes: 172.26.123.11:9300
+    datasource:
+        search-datasource: #search数据源
+            driver-class-name: dm.jdbc.driver.DmDriver # mysql的驱动你可以配置别的关系型数据库
+            url: jdbc:dm://172.27.123.2:5236 #数据源地址
+            username: SEARCH # 用户名
+            password: Root123456 # 密码
+        case-datasource: #案件数据源
+            driver-class-name: dm.jdbc.driver.DmDriver # mysql的驱动你可以配置别的关系型数据库
+            url: jdbc:dm://172.28.123.39:5236 #数据源地址
+            username: DBI # 用户名
+            password: hust44000 # 密码
+        knowlege-datasource: # 知识库数据源
+            driver-class-name: dm.jdbc.driver.DmDriver # mysql的驱动你可以配置别的关系型数据库
+            url: jdbc:dm://172.27.123.2:5236
+            username: KNOWLEDGE # 用户名
+            password: Root123456 # 密码
+        # separationDs: # 数据源3
+        #     driver-class-name: dm.jdbc.driver.DmDriver # mysql的驱动你可以配置别的关系型数据库
+        #     url: jdbc:mysql://ip:3307/db2#数据源地址
+        #     username: root # 用户名
+        #     password: root # 密码
+        files-datasource: # 文件柜数据源
+            driver-class-name: dm.jdbc.driver.DmDriver # mysql的驱动你可以配置别的关系型数据库
+            url: jdbc:dm://172.27.123.2:5236 #数据源地址
+            username: upload # 用户名
+            password: Root123456 # 密码
 
 management:
     endpoints:

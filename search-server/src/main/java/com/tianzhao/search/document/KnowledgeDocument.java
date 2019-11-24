@@ -11,7 +11,7 @@ import java.util.Date;
  * Created by zzc on 2019/11/16.
  */
 @Document(indexName = "knowledge")
-@Mapping(mappingPath = "index.json")
+@Mapping(mappingPath = "knowledge.json")
 public class KnowledgeDocument {
     @Id
     private String id;
@@ -35,6 +35,20 @@ public class KnowledgeDocument {
      * 创建时间
      */
     private Date createTime;
+    /**
+     * 数据来源
+     */
+    private String resource;
+
+    public KnowledgeDocument(){
+
+    }
+
+    public KnowledgeDocument(String businessId, String title, String description) {
+        this.businessId = businessId;
+        this.title = title;
+        this.description = description;
+    }
 
     public String getId() {
         return id;
@@ -82,5 +96,13 @@ public class KnowledgeDocument {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getResource() {
+        return resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
     }
 }
