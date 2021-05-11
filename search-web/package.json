@@ -11,7 +11,7 @@
     "dva": "^2.3.1",
     "echarts": "^4.2.0-rc.2",
     "html2canvas": "^1.0.0-rc.3",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "lodash-decorators": "^6.0.0",
     "moment": "^2.22.2",
     "path-to-regexp": "^2.2.1",
